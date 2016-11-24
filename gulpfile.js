@@ -30,13 +30,13 @@ gulp.task('browserSync', function() {
 })
 
 gulp.task('fonts', function() {
-  return gulp.app('app/fonts/**/*')
+  return gulp.src('app/fonts/**/*')
   .pipe(gulp.dest('dist/fonts'))
 })
 
 //minify images
 gulp.task('images', function(){
- return gulp.app('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
+ return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
  // Caching images that ran through imagemin
  .pipe(cache(imagemin({
      interlaced: true
@@ -48,7 +48,7 @@ gulp.task('images', function(){
 
 //Set up the concatination plugin
 gulp.task('useref', function(){
-  return gulp.app('app/*.html')
+  return gulp.src('app/*.html')
     .pipe(useref())
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
