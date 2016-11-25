@@ -32,7 +32,7 @@ function showResult(str) {
   xmlhttp.onreadystatechange=function() {
     if (this.readyState==4 && this.status==200) {
       document.getElementById("livesearch").innerHTML=this.responseText;
-      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+      // document.getElementById("livesearch").style.border="1px solid #A5ACB2";
     }
   }
   xmlhttp.open("GET","livesearch.php?q="+str,true);
@@ -43,7 +43,6 @@ function showResult(str) {
   <body>
 <div class="container-fluid welcome">
     <div class="col-xs-12 col-sm-12 container">
-    
     <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1">
       <h1 class="top-header">LiveSearch</h1>
       <p class="lead">Search for your favourite Whiskey</p>
